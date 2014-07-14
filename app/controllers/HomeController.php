@@ -27,7 +27,7 @@ class HomeController extends BaseController {
             return Redirect::to('/tickets/new')->withErrors( $e->getErrors() );
         } catch(\DomainException $e)
         {
-            return Redirect::to('/tickets/new')->withErrors( $e->getErrors() );
+            return Redirect::to('/tickets/new')->withErrors( $e->getMessage() );
         }
 
         return Redirect::to('/tickets')->with(['message' => 'success!']);
